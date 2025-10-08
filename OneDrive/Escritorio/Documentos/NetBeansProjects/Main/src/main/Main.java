@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package main;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,7 +15,37 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+      Aerolinea avianca = new  Aerolinea();
+      avianca.setNombre("avianca");
+      avianca.setPais("bogota");
+      avianca.setListavuelo(new ArrayList<>());
+
+      
+      Vuelo v1 = new Vuelo("AV123", "Bogotá", "Madrid", 300, 150);
+      Vuelo v2 = new Vuelo("AV456", "Cartagena", "Miami", 200, 180);
+      Vuelo v3 = new Vuelo("AV789", "Medellín", "Panamá", 120, 100);
+      
+      avianca.agregarVuelo(v1);
+      avianca.agregarVuelo(v2);
+      avianca.agregarVuelo(v3);
+      
+      System.out.println("Vuelos disponibles:");
+      avianca.mostrarVuelos(); 
+      
+      Vuelo vueloBuscado = avianca.buscarVuelo("AV456");
+
+     if (vueloBuscado != null) {
+    vueloBuscado.reservarAsiento(50);
+        } else {
+        System.out.println("Vuelo no encontrado.");
+        
+        System.out.println("Total de pasajeros en la aerolínea: " + avianca.totalPasajeros());
+
+}
+
+  
+
+
     }
     
 }

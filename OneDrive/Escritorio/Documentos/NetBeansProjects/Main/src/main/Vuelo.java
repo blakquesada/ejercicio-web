@@ -9,11 +9,11 @@ package main;
  * @author windows 11
  */
 public class Vuelo {
-     String codigo;
-    String origen;
-    String destino;
-    int capacidad;
-    int pasajeros;
+    private String codigo;
+    private String origen;
+    private String destino;
+    private  int capacidad;
+    private int pasajeros;
 
      public Vuelo() {
     }
@@ -73,15 +73,30 @@ public boolean hayDisponibilidad(){
 
 public void reservarAsiento(int cantidad){
 
-    if (true) {
-
+    if (cantidad + pasajeros <= capacidad) {
+        
+         pasajeros += cantidad;
+    }else{
+        System.out.println("---------error no puede reservár---------------");
     }
 
 
 }
 
+public String toString(){
+   return "Código del vuelo: " + codigo +
+       "\nOrigen: " + origen +
+       "\nDestino: " + destino +
+       "\nCapacidad: " + capacidad +
+       "\nPasajeros actuales: " + pasajeros;
+}
 
 
+ /*String codigo;
+    String origen;
+    String destino;
+    int capacidad;
+    int pasajeros;*/
 
 
 
